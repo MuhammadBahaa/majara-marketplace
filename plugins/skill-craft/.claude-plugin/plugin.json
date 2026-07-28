@@ -1,7 +1,7 @@
 {
   "name": "skill-craft",
   "displayName": "Skill Craft",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "Technical review and guided walkthroughs for agent skills, slash commands, and plugins — a fixed 10-dimension safety/severity audit plus a clear human approval walkthrough. Custom-agent review and authoring are not included.",
   "author": { "name": "Muhammad Bahaa", "email": "muhammadbahaa75@gmail.com" },
   "homepage": "https://github.com/MuhammadBahaa/majarrah-marketplace",

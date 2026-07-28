@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.1.0 - 2026-07-28
+
+Review output contract update — the first release that changes what a review
+prints:
+
+- Score every review out of ten on the Verdict line. The verdict picks the
+  band (BLOCKED 0–3, NEEDS-WORK 4–6, READY-WITH-FIXES 7–8, READY 9–10) and the
+  count of findings at the worst severity picks the place inside it, so two
+  runs of one review land on the same number.
+- Hold the score to the verdict's as-submitted discipline: applying a fix
+  never raises it, and a number outside its band is an error, not a judgment
+  call.
+- Turn the Findings table into a restricted template — five fixed columns and
+  a placeholder row — and enforce it in the skill's own red flags instead of
+  describing it in prose.
+- Make each finding's Location a clickable `file:line` link relative to the
+  working directory, so an approver opens the file on the defect's line
+  instead of hunting for it.
+
 ## 1.0.7 - 2026-07-23
 
 Repository-metadata release (supersedes the unpublished 1.0.6, whose release
