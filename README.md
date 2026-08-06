@@ -1,5 +1,7 @@
 # Majarrah Nexus — Marketplace
 
+<img width="1280" height="640" alt="image-1786035525165" src="https://github.com/user-attachments/assets/d91aa0e1-0380-41ce-a40b-5eed9ed0aa83" />
+
 [![Latest release](https://img.shields.io/github/v/release/MuhammadBahaa/majarrah-marketplace?display_name=release&label=release&color=brightgreen)](https://github.com/MuhammadBahaa/majarrah-marketplace/releases)
 [![License](https://img.shields.io/github/license/MuhammadBahaa/majarrah-marketplace)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/MuhammadBahaa/majarrah-marketplace?style=flat)](https://github.com/MuhammadBahaa/majarrah-marketplace/stargazers)
