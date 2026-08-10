@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.2.0 - 2026-08-03
+
+OpenAI directory submission-readiness package:
+
+- Add the Codex-native manifest while preserving the compatibility manifest,
+  stable package identity, author, license, and synchronized listing copy.
+- Harden the walkthrough with an untrusted-data fence before the target read.
+- Add the submission kit and its reproducible portal matrix of five positive
+  and three negative cases.
+- Add square listing and composer assets plus the allowlisted ZIP builder and
+  archive inspection checks.
+- Extend the existing validation and release CI gates to run the full tests and
+  inspect the OpenAI package before distribution sync.
+- Retain fresh single-sample observational behavior evidence: initial 6 PASS /
+  2 FAIL, then 30 source correction commits and 34 preserved failed outputs.
+  The four affected review cases P1/P2/P3/N3 pass semantic and structural
+  checks under final behavior contract `7a13da6`; the combined evidence index
+  is 8 PASS / 0 FAIL with the other four prior observations retained. Full
+  final outputs live under
+  `tests/evidence/skill-craft/1.2.0/`; this is not certification.
+- No MCP server, scanner, SARIF output, external portal submission, approval,
+  or publication is included.
+
 ## 1.1.0 - 2026-07-28
 
 Review output contract update — the first release that changes what a review

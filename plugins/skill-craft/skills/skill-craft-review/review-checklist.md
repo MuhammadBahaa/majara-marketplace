@@ -37,6 +37,10 @@ Walk every dimension. Each check is tagged with its source:
 ## 2. Discoverability (frontmatter description)
 
 - Third person. First person ("I help you...") breaks discovery. `[inherited]`
+- `Use when...` is an acceptable third-person trigger form. Classify a
+  description as first-person only when the quoted description contains
+  actual first-person pronouns such as `I`, `we`, `me`, `us`, `my`, `our`,
+  `mine`, or `ours`. `[skillcraft]`
 - States triggering conditions — symptoms, situations, error messages,
   keywords a user or agent would actually search — ideally starting
   "Use when...". `[inherited]`
@@ -45,6 +49,13 @@ Walk every dimension. Each check is tagged with its source:
   the body, so body rules silently drop out. `[inherited]`
 - Description promises match the body. A description that claims steps the
   body doesn't enforce misleads both agents and approvers. `[skillcraft]`
+- Before writing any D2 Finding, quote the exact frontmatter `description` in
+  the finding and anchor every discoverability claim to that quoted text.
+  Do not infer voice or trigger coverage from the skill name, title, purpose,
+  or body. `[skillcraft]`
+- A workflow-summary or promise/body-mismatch D2 Finding must quote the
+  precise description phrase and the contradicting or unsupported body evidence.
+  If both quotes are not available, do not make the finding. `[skillcraft]`
 - Keyword coverage: list 3–5 phrasings a user with this problem would type;
   check each would plausibly match the description. `[adapted]`
 
@@ -52,6 +63,9 @@ Walk every dimension. Each check is tagged with its source:
 
 - Says when NOT to use it. A skill without a boundary fires everywhere and
   gets loaded into conversations it can only pollute. `[adapted]`
+- Separately from a when-not-to-use boundary, if necessary audience, purpose,
+  or target inputs are missing or unclear, the workflow must ask for them and
+  wait instead of guessing or continuing. `[skillcraft]`
 - No overlap with a sibling skill in the same plugin such that both trigger
   on the same phrasing with conflicting instructions. `[skillcraft]`
 - Doesn't duplicate guidance that already exists in another skill it could
@@ -138,6 +152,9 @@ Context is a shared budget; every loaded token competes with the task. `[inherit
 - One excellent, complete, real example beats parallel examples in several
   languages — multi-language sets dilute quality and bloat context.
   Recommend keeping the best one. `[inherited]`
+- For a simple workflow with a complete exact strict-output template, absence
+  of a separate worked example is not a defect or Finding. Suggest an example
+  as an Enhancement only when useful. `[skillcraft]`
 - Flowcharts only for genuinely non-obvious decisions or loops; never for
   reference material, linear steps — and never with code inside node labels. `[inherited]`
 - Strict outputs get an exact template; flexible outputs get a default plus
@@ -149,6 +166,14 @@ Context is a shared budget; every loaded token competes with the task. `[inherit
 
 - Any evidence the skill was tested against agents (baseline runs, pressure
   scenarios, eval results, a tested-on note)? `[inherited]`
+- A credible concise tested-on or pass note is acceptable evidence for routine
+  review. Missing independent transcripts or runnable fixtures belongs in Not
+  reviewed or an Enhancement, not a defect or Finding, unless an explicit
+  release requirement demands retained artifacts. `[skillcraft]`
+- Credible means the note names a concrete case, expected or observed behavior,
+  and result or pass condition. "Tried once" or "liked the result" is not
+  credible; report it as a D9 Finding with a concrete fix, not merely in Not
+  reviewed or an Enhancement. `[skillcraft]`
 - If none: recommend RED-GREEN-REFACTOR testing — baseline without the
   skill, verify with it, close loopholes. Untested discipline skills are
   almost always leaky. (Methodology detail lives in

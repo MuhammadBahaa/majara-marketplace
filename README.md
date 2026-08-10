@@ -1,7 +1,5 @@
 # Majarrah Nexus — Marketplace
 
-<img width="1280" height="640" alt="image-1786035525165" src="https://github.com/user-attachments/assets/d91aa0e1-0380-41ce-a40b-5eed9ed0aa83" />
-
 [![Latest release](https://img.shields.io/github/v/release/MuhammadBahaa/majarrah-marketplace?display_name=release&label=release&color=brightgreen)](https://github.com/MuhammadBahaa/majarrah-marketplace/releases)
 [![License](https://img.shields.io/github/license/MuhammadBahaa/majarrah-marketplace)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/MuhammadBahaa/majarrah-marketplace?style=flat)](https://github.com/MuhammadBahaa/majarrah-marketplace/stargazers)
@@ -19,6 +17,7 @@ Cursor, GitHub Copilot, and Gemini CLI.
 | Plugin | What it does |
 |--------|--------------|
 | [`skill-craft`](plugins/skill-craft) | Technical review and guided walkthroughs for agent skills, slash commands, and plugins. |
+| [`code-craft`](plugins/code-craft) | Clean Architecture feature implementation in whatever stack a project already uses. |
 
 ## Install
 
@@ -31,9 +30,10 @@ codex plugin marketplace add MuhammadBahaa/majarrah-marketplace
 codex plugin marketplace list
 codex plugin list
 codex plugin add skill-craft@majarrah-marketplace
+codex plugin add code-craft@majarrah-marketplace
 ```
 
-`codex plugin list` should now show `skill-craft@majarrah-marketplace` as
+`codex plugin list` should now show each plugin you added as
 `installed, enabled`. Start a new Codex task to load the skills.
 
 ### Claude Code
@@ -42,10 +42,10 @@ codex plugin add skill-craft@majarrah-marketplace
 claude plugin marketplace add MuhammadBahaa/majarrah-marketplace
 # then, inside Claude Code:
 /plugin install skill-craft@majarrah-marketplace
+/plugin install code-craft@majarrah-marketplace
 ```
 
-`/plugin` lists what is installed — `skill-craft` should be enabled. Start a
-new session to load the skills.
+`/plugin` lists what is installed. Start a new session to load the skills.
 
 ### Cursor, GitHub Copilot, Gemini CLI, and others
 

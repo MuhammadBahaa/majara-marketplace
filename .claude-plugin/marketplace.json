@@ -12,7 +12,13 @@
       "name": "skill-craft",
       "source": "./plugins/skill-craft",
       "description": "Technical review and guided walkthroughs for agent skills, slash commands, and plugins \u2014 a fixed 10-dimension safety/severity audit plus a clear human approval walkthrough. Custom-agent review and authoring are not included.",
-      "version": "1.1.0"
+      "version": "1.2.0"
+    },
+    {
+      "name": "code-craft",
+      "source": "./plugins/code-craft",
+      "description": "Clean Architecture feature implementation for any stack \u2014 mobile (Flutter, Android, iOS, React Native), web frontend, backend service, or desktop. Bundled mappings ship for the four mobile stacks and Node backends; every other stack is derived live from the project's own conventions, which are detected first and always win over the skill's defaults.",
+      "version": "0.13.0"
     }
   ]
 }

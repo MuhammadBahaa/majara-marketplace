@@ -1,0 +1,40 @@
+{
+  "name": "skill-craft",
+  "version": "1.2.0",
+  "description": "Technical review and guided walkthroughs for agent skills, slash commands, and plugins — a fixed 10-dimension safety/severity audit plus a clear human approval walkthrough. Custom-agent review and authoring are not included.",
+  "author": {
+    "name": "Muhammad Bahaa",
+    "email": "muhammadbahaa75@gmail.com"
+  },
+  "homepage": "https://github.com/MuhammadBahaa/majarrah-marketplace",
+  "repository": "https://github.com/MuhammadBahaa/majarrah-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "skill-review",
+    "plugin-review",
+    "agent-skills",
+    "approval-gate"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Skill Craft",
+    "shortDescription": "Review skills before release",
+    "longDescription": "Review agent skills as behavior before publishing. Skill Craft audits triggers, workflow safety, context cost, testing evidence, and approval readiness through a fixed ten-dimension report. It also provides a separate five-part walkthrough in the reader's language. Results support a human decision; they are not a security certification.",
+    "developerName": "Muhammad Bahaa",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Review agent skill behavior",
+      "Explain skills in clear language"
+    ],
+    "websiteURL": "https://majarrah-marketplace.hashnode.dev/i-built-skill-craft-because-a-skill-can-look-right-and-still-fail-at-work",
+    "privacyPolicyURL": "https://github.com/MuhammadBahaa/majarrah-marketplace/blob/main/plugins/skill-craft/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/MuhammadBahaa/majarrah-marketplace/blob/main/plugins/skill-craft/TERMS.md",
+    "defaultPrompt": [
+      "Review this agent skill and tell me whether it is ready to publish.",
+      "Walk me through this skill in Arabic and explain what it can touch.",
+      "Compare these two skill versions and explain what changed."
+    ],
+    "logo": "./assets/skill-craft-logo.png",
+    "composerIcon": "./assets/skill-craft-composer.png"
+  }
+}

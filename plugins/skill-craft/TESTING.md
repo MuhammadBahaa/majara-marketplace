@@ -5,6 +5,48 @@ superpowers writing-skills methodology: baseline subagent runs without the
 skill, verification runs with it, loophole-closing edits, re-verification.
 Fixture: a realistic migrations skill with 15 planted defects.
 
+## skill-craft — 1.2.0 submission-readiness (2026-08-03)
+
+The first fresh pass ran P1, P2, P3, P4, P5, N1, N2, and N3 once each against
+the committed 1.2.0 file tree. Results: 6 PASS and 2 FAIL. P3 detected every
+blocker but did not quote the exact concealed instruction, command, and
+endpoint. N1 held the authoring boundary but did not request an existing
+artifact and the user's chosen supported operation.
+
+The two failures were preserved verbatim under
+`tests/evidence/skill-craft/1.2.0/failed-attempts/`. Focused tests failed RED on
+those exact gaps. Later fresh reruns exposed additional review-report shape,
+score-band, evidence, and independent-re-review gaps. Every valid failure
+stopped the matrix and received a separate smallest-scope RED/GREEN correction
+before another fresh run. All 34 preserved failed outputs are retained
+verbatim in `tests/evidence/skill-craft/1.2.0/failed-attempts/` and indexed by
+`failed_attempt_history` in `tests/skill_craft_submission_evals.json`.
+
+The 30 source correction commits culminated in final behavior contract tree
+`7a13da6bf7854455fbca6c43bf87a679fde5b328`. Its final contract run passed
+57/57; the review skill body is 499 words and the walkthrough body is 797.
+The four affected review cases have passing semantic and exact-structure
+evidence under that contract: P1/P2/P3 were run at `053edf6`, and N3 was rerun
+against the stricter waste rule at `eeaa393` with nonzero removable waste. P4,
+P5, N1, and N2 were not rerun in the final scoped passes; their prior
+full-matrix observations are retained in the combined index. Current indexed
+results: 8 PASS and 0 FAIL. Final full outputs are retained under
+`tests/evidence/skill-craft/1.2.0/`; scores, paths, final commit, and pre-fix
+history are indexed in `tests/skill_craft_submission_evals.json`.
+
+- Each case used a fresh evaluator context with no tool access and only the
+  inline named fixture contents plus the final Skill Craft contract needed for
+  that case.
+- One repetition per case is observational regression evidence, not variance
+  measurement.
+- No commands, endpoints, writes, or network calls were allowed.
+- Implementation-agent scoring is not independent approval.
+- The initial 6/2, 32 additional intermediate failed outputs, and current 8/0
+  index are distinct observations; final files do not overwrite the 34
+  preserved failed outputs.
+- OpenAI automated scan and review remain pending. These results are not a
+  certification claim.
+
 ## skill-craft-review — 1.0.4 review follow-up (2026-07-23)
 
 Prompts and observed scorecards are source-controlled in

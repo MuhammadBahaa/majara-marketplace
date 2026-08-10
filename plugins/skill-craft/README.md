@@ -9,9 +9,10 @@
 [![Stars](https://img.shields.io/github/stars/MuhammadBahaa/majarrah-marketplace?style=flat)](https://github.com/MuhammadBahaa/majarrah-marketplace/stargazers)
 [![skills.sh installs](https://skills.sh/b/MuhammadBahaa/majarrah-marketplace)](https://skills.sh/MuhammadBahaa/majarrah-marketplace)
 
-Technical review and guided walkthroughs for agent skills, slash commands,
-and plugins by **Majarrah Nexus** — SkillCraft. Custom-agent review and
-authoring are not included.
+Skill Craft 1.2.0 is a human-in-the-loop release gate for technical reviews
+and guided walkthroughs of agent skills, slash commands, and plugins by
+**Majarrah Nexus**. It helps an approver inspect behavior before release;
+custom-agent review and authoring are not included.
 
 | Skill | What it does |
 |---|---|
@@ -29,6 +30,18 @@ The two documented trims and complete upstream MIT license are retained in
 [`THIRD_PARTY_NOTICES.md`](skills/skill-craft-review/THIRD_PARTY_NOTICES.md).
 Test evidence:
 `TESTING.md`.
+
+## Limits
+
+Skill Craft is a human-in-the-loop release gate.
+Findings and severities are model judgments; only the score mapping after
+severity is assigned is deterministic.
+It is not a security certification or a replacement for static scanning.
+
+It reviews and explains existing skill packages. It does not provide
+authoring, an MCP server, network access, authentication, or storage. See the
+[privacy policy](PRIVACY.md), [terms of service](TERMS.md), and
+[support policy](SUPPORT.md).
 
 ## Install
 
