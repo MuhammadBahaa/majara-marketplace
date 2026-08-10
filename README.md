@@ -17,7 +17,7 @@ Cursor, GitHub Copilot, and Gemini CLI.
 | Plugin | What it does |
 |--------|--------------|
 | [`skill-craft`](plugins/skill-craft) | Technical review and guided walkthroughs for agent skills, slash commands, and plugins. |
-| [`code-craft`](plugins/code-craft) | Engineering discipline for building and refactoring features in a project's own stack and conventions. |
+| [`code-craft`](plugins/code-craft) | Clean Architecture feature implementation in whatever stack a project already uses. |
 
 ## Install
 
@@ -33,8 +33,9 @@ codex plugin add skill-craft@majarrah-marketplace
 codex plugin add code-craft@majarrah-marketplace
 ```
 
-`codex plugin list` should now show each plugin you added as
-`installed, enabled`. Start a new Codex task to load the skills.
+`codex plugin list` should now show `skill-craft@majarrah-marketplace` and
+`code-craft@majarrah-marketplace` as `installed, enabled`. Start a
+new Codex task to load the skills.
 
 ### Claude Code
 
@@ -45,7 +46,8 @@ claude plugin marketplace add MuhammadBahaa/majarrah-marketplace
 /plugin install code-craft@majarrah-marketplace
 ```
 
-`/plugin` lists what is installed. Start a new session to load the skills.
+`/plugin` lists what is installed — `skill-craft` and `code-craft` should both
+be enabled. Start a new session to load the skills.
 
 ### Cursor, GitHub Copilot, Gemini CLI, and others
 
