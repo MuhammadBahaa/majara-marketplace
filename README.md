@@ -70,11 +70,14 @@ agent afterwards.
 ```bash
 git clone https://github.com/MuhammadBahaa/majarrah-marketplace
 mkdir -p ~/.agents/skills
-cp -r majarrah-marketplace/plugins/skill-craft/skills/* ~/.agents/skills/
+cp -r majarrah-marketplace/plugins/*/skills/* ~/.agents/skills/
 ```
 
-Use `~/.agents/skills/` (user-wide) or `<project>/.agents/skills/` (per
-project). Restart the agent afterwards.
+That copies every skill in the marketplace; name a single plugin instead of the
+`*` to take just one. Use `~/.agents/skills/` (user-wide) or
+`<project>/.agents/skills/` (per project). Cursor and Copilot also read
+`~/.claude/skills`, so a Claude Code install covers them too. Restart the agent
+afterwards.
 
 ## License
 
