@@ -1,6 +1,7 @@
 # Majarrah Nexus — Marketplace
 
-[![Latest release](https://img.shields.io/github/v/release/MuhammadBahaa/majarrah-marketplace?display_name=release&label=release&color=brightgreen)](https://github.com/MuhammadBahaa/majarrah-marketplace/releases)
+<img width="1280" height="640" alt="majarrah-marketplace-social-preview" src="https://github.com/user-attachments/assets/ef5e2d8f-4c39-410b-a85e-1647dd658b41" />
+
 [![License](https://img.shields.io/github/license/MuhammadBahaa/majarrah-marketplace)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/MuhammadBahaa/majarrah-marketplace?style=flat)](https://github.com/MuhammadBahaa/majarrah-marketplace/stargazers)
 [![skills.sh installs](https://skills.sh/b/MuhammadBahaa/majarrah-marketplace)](https://skills.sh/MuhammadBahaa/majarrah-marketplace)
@@ -9,8 +10,12 @@ Free, open AI-agent skills from **Majarrah Nexus**. Works with Codex, Claude
 Code, and every agent that supports the Agent Skills open standard — including
 Cursor, GitHub Copilot, and Gemini CLI.
 
-> This repository is **generated** from the private `MajarrahCore` monorepo.
-> Do not edit here — changes are overwritten on the next release.
+<!--
+  Generated from the private MajarrahCore monorepo
+  (distribution/majarrah-marketplace/README.md). Edits made here are
+  overwritten on the next release -- change the source instead.
+  This notice is an HTML comment so it does not render on the public page.
+-->
 
 ## Plugins
 
