@@ -21,10 +21,39 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      # Check out the branch itself, not the pushed SHA: the README sync step
+      # commits back, and a detached HEAD cannot be pushed.
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - name: Publish releases for new plugin versions
         env:
           GH_TOKEN: ${{ github.token }}
         run: python .github/scripts/publish_releases.py
+
+      # skills.sh has no publish API, so a release keeps it current in two ways:
+      # the repo's own skills.sh links are regenerated, and Vercel is asked to
+      # rescan when the live listing still lags behind what just shipped.
+      - name: Sync README skills.sh sections
+        run: python .github/scripts/sync_readme_skills_sh.py
+
+      - name: Commit README if it changed
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README.md unchanged - nothing to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: sync skills.sh links after release"
+          # A MajarrahCore republish can land while this job runs; rebase onto it
+          # rather than failing the release over a README commit.
+          git push || (git pull --rebase && git push)
+
+      - name: Request a skills.sh rescan if the listing is stale
+        env:
+          SKILLS_SH_RESCAN_TOKEN: ${{ secrets.SKILLS_SH_RESCAN_TOKEN }}
+        run: python .github/scripts/request_skills_sh_rescan.py
