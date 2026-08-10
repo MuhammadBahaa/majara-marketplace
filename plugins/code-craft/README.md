@@ -9,7 +9,7 @@ Engineering-craft skills for coding agents, by **Majarrah Nexus**.
 
 | Skill | What it does |
 |---|---|
-| `clean-architecture` | Implements, extends, or refactors a feature with Clean Architecture in whatever stack the project already uses |
+| [`clean-architecture`](https://skills.sh/muhammadbahaa/majarrah-marketplace/clean-architecture) | Implements, extends, or refactors a feature with Clean Architecture in whatever stack the project already uses |
 
 ## What `clean-architecture` does
 
@@ -88,11 +88,14 @@ session to load the skill.
 ### Cursor, GitHub Copilot, Gemini CLI, and others
 
 ```bash
-npx skills add MuhammadBahaa/majarrah-marketplace
+npx skills add MuhammadBahaa/majarrah-marketplace --skill clean-architecture
 ```
 
-[skills.sh](https://skills.sh/MuhammadBahaa/majarrah-marketplace) installs into
-the shared Agent Skills directory these agents read. Gemini CLI alternative:
+Drop the `--skill` flag to take every skill in the marketplace instead. The
+skill's page is
+[skills.sh/muhammadbahaa/majarrah-marketplace/clean-architecture](https://skills.sh/muhammadbahaa/majarrah-marketplace/clean-architecture);
+it installs into the shared Agent Skills directory these agents read. Gemini CLI
+alternative:
 `gemini skills install <skill-folder-or-git-url>`. Reload skills or restart the
 agent afterwards.
 

@@ -24,6 +24,11 @@ Cursor, GitHub Copilot, and Gemini CLI.
 | [`skill-craft`](plugins/skill-craft) | Technical review and guided walkthroughs for agent skills, slash commands, and plugins. |
 | [`code-craft`](plugins/code-craft) | Clean Architecture feature implementation in whatever stack a project already uses. |
 
+Every skill also has its own page on skills.sh:
+[`skill-craft-review`](https://skills.sh/muhammadbahaa/majarrah-marketplace/skill-craft-review) ·
+[`skill-walkthrough`](https://skills.sh/muhammadbahaa/majarrah-marketplace/skill-walkthrough) ·
+[`clean-architecture`](https://skills.sh/muhammadbahaa/majarrah-marketplace/clean-architecture)
+
 ## Install
 
 Every route installs the same skills. Pick the one that matches your agent.
