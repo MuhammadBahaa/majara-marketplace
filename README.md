@@ -33,6 +33,11 @@ Every skill also has its own page on skills.sh:
 
 Every route installs the same skills. Pick the one that matches your agent.
 
+### ChatGPT
+
+[Install Skill Craft from the ChatGPT Plugins Directory](https://chatgpt.com/plugins/plugins_6a8c5b59d1d88191b45fc86f7cfb92e0),
+then select **Install plugin**.
+
 ### Codex
 
 ```bash
@@ -69,20 +74,6 @@ npx skills add MuhammadBahaa/majarrah-marketplace
 the shared Agent Skills directory these agents read. Gemini CLI alternative:
 `gemini skills install <skill-folder-or-git-url>`. Reload skills or restart the
 agent afterwards.
-
-### Manual copy
-
-```bash
-git clone https://github.com/MuhammadBahaa/majarrah-marketplace
-mkdir -p ~/.agents/skills
-cp -r majarrah-marketplace/plugins/*/skills/* ~/.agents/skills/
-```
-
-That copies every skill in the marketplace; name a single plugin instead of the
-`*` to take just one. Use `~/.agents/skills/` (user-wide) or
-`<project>/.agents/skills/` (per project). Cursor and Copilot also read
-`~/.claude/skills`, so a Claude Code install covers them too. Restart the agent
-afterwards.
 
 ## License
 
