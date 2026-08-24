@@ -1,5 +1,11 @@
 # Review Report Contract
 
+## Contents
+
+- Exact report skeleton
+- Before-send preflight
+- Findings rows and verdict mapping
+
 Instantiate the complete exact report skeleton before filling content: title,
 Verdict, Safety scan, Token cost, Findings, Dimension coverage, Enhancements,
 Done well, Not reviewed, Decision, Call, Fix status, Open questions. Preserve

@@ -1,6 +1,6 @@
 {
   "name": "skill-craft",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Technical review and guided walkthroughs for agent skills, slash commands, and plugins — a fixed 10-dimension safety/severity audit plus a clear human approval walkthrough. Custom-agent review and authoring are not included.",
   "author": {
     "name": "Muhammad Bahaa",

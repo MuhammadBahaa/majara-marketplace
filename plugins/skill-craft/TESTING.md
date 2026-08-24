@@ -5,6 +5,79 @@ superpowers writing-skills methodology: baseline subagent runs without the
 skill, verification runs with it, loophole-closing edits, re-verification.
 Fixture: a realistic migrations skill with 15 planted defects.
 
+## skill-craft — 1.2.1 submission corrections (2026-08-24)
+
+This corrective pass began from the recorded as-submitted NEEDS-WORK review.
+The missing-target baseline already asked and waited because the checklist
+supplied the gate, but the primary review workflow did not expose it. The
+unspecified-language baseline asked which language the reader preferred and
+then incorrectly continued with a full English walkthrough in the same
+message.
+
+RED structural coverage added focused assertions for the primary
+missing-target gate, unnamed-language wait, sub-500-word walkthrough body,
+early contents in every long behavior reference, coherent 1.2.1 metadata,
+fresh evidence paths, and squash-stable changelog traceability. All eight
+focused assertions failed for their expected pre-fix reasons.
+
+GREEN results:
+
+- The review workflow now asks one concise clarification and waits when its
+  target or review request is missing or unclear.
+- An unnamed request for another walkthrough language now returns only one
+  language question and waits. The retained fresh response is
+  `tests/evidence/skill-craft/1.2.1/unspecified-language-regression.md`.
+- The review body is 499 words and the walkthrough body is 499 words by the
+  repository's whitespace-count contract. The long report contract begins
+  with `## Contents`.
+- All 63 review-contract tests and all 21 submission-specific tests pass.
+- Fresh isolated evaluators ran P1, P2, P3, P4, P5, N1, N2, and N3 once each:
+  8 PASS / 0 FAIL. Outputs are retained under
+  `tests/evidence/skill-craft/1.2.1/` and indexed by
+  `tests/skill_craft_submission_evals.json`.
+- Four focused regressions also pass once each: unspecified language, absolute
+  reference, parent traversal, and simulated symlink escape. Every case asked
+  one concise question and waited without reading the target or outside-root
+  content; the symlink case is simulated link-metadata evidence, not a
+  filesystem integration test.
+- The N3 run correctly reported zero flagged waste because every finding
+  proposed additions or unmeasured replacements; P3 proposed removal and
+  correctly reported nonzero waste. The evidence test now enforces the
+  report contract's semantic distinction instead of assuming every BLOCKED
+  review has removable content.
+- The final full repository suite passes 309/309. `python3 tools/validate.py`
+  reports 0 errors and 0 warnings; JSON parsing and `git diff --check` pass.
+- Two independent local package builds were byte-identical. The runtime ZIP has
+  13 allowlisted members, 925,817 compressed bytes, and SHA-256
+  `4ee2fb1a78b05a37cc062c65d5dab0f9cf1a2661e6170ed390b3735b984b4330`.
+  The generated ignored artifact is
+  `build/submissions/skill-craft-1.2.1.zip`.
+
+The first independent post-fix plugin review returned NEEDS-WORK 5/10 with two
+major reference-containment findings and one minor broken packaged cover link.
+The fixes now establish target-root containment in both skills and remove the
+excluded cover embed; new structural, archive-link, and fresh behavior tests
+pass. A second independent review returned READY-WITH-FIXES 8/10 after clearing
+those findings, then found one plain local `TESTING.md` path that the ZIP did
+not contain. The README now uses the public repository URL and the archive test
+checks backticked Markdown paths as well as Markdown links. This final minor fix
+is applied, not independently re-reviewed at this point in the evidence
+sequence.
+
+A third fresh independent clearance review returned READY 10/10 with no
+findings. It verified the 123 scoped static/package tests, validator, JSON and
+diff checks, archive integrity, SHA-256/member claims, manifests, containment
+rules, resolved README references, and ZIP-to-source byte identity. It did not
+repeat the full repository suite or external portal/live-host/legal checks.
+
+Each behavior case used a fresh read-only evaluator. No fixture command or
+script was run, no endpoint was contacted, no file was edited by an evaluator,
+and no push, tag, distribution release, portal upload, submission, approval,
+or publication occurred. One repetition per case is observational regression
+evidence, not variance measurement or certification. OpenAI portal scanning,
+publisher verification, legal attestations, live-host installation, upload,
+submission, and publication remain external/manual gates.
+
 ## skill-craft — 1.2.0 submission-readiness (2026-08-03)
 
 The first fresh pass ran P1, P2, P3, P4, P5, N1, N2, and N3 once each against

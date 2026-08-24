@@ -1,6 +1,6 @@
 {
   "plugin": "skill-craft",
-  "target_version": "1.2.0",
+  "target_version": "1.2.1",
   "execution_boundary": "Fresh context per case; local file reading and chat output only; no network, command execution, or fixture edits.",
   "positive": [
     {

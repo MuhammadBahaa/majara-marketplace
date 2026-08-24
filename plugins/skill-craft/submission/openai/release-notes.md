@@ -1,14 +1,22 @@
-# Skill Craft 1.2.0 submission-candidate notes
+# Skill Craft 1.2.1 submission-candidate notes
 
-- Adds a native skills-only OpenAI manifest while retaining the compatibility
-  manifest.
-- Strengthens the walkthrough boundary so target files and their references are
-  always treated as untrusted text, never executed instructions.
-- Adds public privacy, terms, and support documents with accurate local-only and
-  advisory-use boundaries.
-- Adds five positive and three negative reviewer cases with public fixtures for
-  fresh observational evaluation.
-- Prepares portal copy and manual review gates without uploading, submitting,
+- Makes the primary review workflow ask and wait when its target or review
+  request is missing or unclear.
+- Makes an unnamed language request pause for one concise clarification before
+  the walkthrough begins.
+- Keeps both skill bodies below 500 words and adds an early contents section to
+  the long report contract.
+- Restricts automatic target-reference reads to resolved regular files inside
+  the target or plugin root; absolute, traversal, and symlink escapes require
+  explicit authorization.
+- Removes the packaged README's local cover embed and links excluded test
+  evidence to the public repository, so local Markdown references resolve
+  inside the minimal runtime ZIP.
+- Replaces squash-fragile changelog commit references with reproducible test and
+  evidence paths.
+- Retains the native skills-only OpenAI manifest, compatibility manifest, public
+  policy documents, portal matrix, and manual review boundaries from 1.2.0.
+- Prepares portal copy and local verification without uploading, submitting,
   approving, publishing, pushing, or tagging the candidate.
 
 Review results remain advisory. Human approval and independent review remain

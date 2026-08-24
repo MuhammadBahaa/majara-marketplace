@@ -1,6 +1,6 @@
 # OpenAI portal listing
 
-Portal-only copy for the Skill Craft 1.2.0 submission candidate. The native
+Portal-only copy for the Skill Craft 1.2.1 submission candidate. The native
 manifest remains the source for fields accepted by the ingestion schema;
 Support is retained here because `interface.supportURL` is not accepted.
 
@@ -33,7 +33,7 @@ Support is retained here because `interface.supportURL` is not accepted.
 
 ## Limitations and release boundaries
 
-- The target version is 1.2.0.
+- The target version is 1.2.1.
 - MajarrahCore is the authoritative source; generated majarrah-marketplace output is not edited directly.
 - Preserve `.claude-plugin/plugin.json`; add `.codex-plugin/plugin.json` and keep identity fields synchronized.
 - The plugin is skills-only. It has no MCP, tools, authentication, UI, telemetry, remote service, or data storage.

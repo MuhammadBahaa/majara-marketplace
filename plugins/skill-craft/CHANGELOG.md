@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.2.1 - 2026-08-24
+
+Submission-candidate corrections:
+
+- Put the missing-target clarification gate directly in the primary review
+  workflow: ask one concise question and wait when the artifact or request is
+  missing or unclear.
+- Make an unnamed walkthrough-language request pause for clarification instead
+  of asking and then continuing in English in the same message.
+- Compact both skill bodies below 500 words without removing the report,
+  untrusted-data, comparison, or human-approval contracts.
+- Add an early contents section to the long report contract.
+- Contain target-supplied references to resolved regular files inside the
+  target or plugin root. Absolute paths, parent traversal, and symlink escapes
+  now require a concise authorization question and wait before any read.
+- Remove the article-cover embed from the runtime README because the minimal
+  ZIP intentionally excludes that asset, and link its excluded `TESTING.md`
+  evidence directly to the public repository. An archive test now rejects
+  broken local Markdown links and backticked Markdown paths.
+- Replace squash-fragile changelog commit references with reproducible evidence
+  paths. Fresh 1.2.1 outputs live under
+  `tests/evidence/skill-craft/1.2.1/` and are indexed by
+  `tests/skill_craft_submission_evals.json`; this remains observational evidence,
+  not certification.
+- No portal upload, submission, approval, publication, push, or tag is included.
+
 ## 1.2.0 - 2026-08-03
 
 OpenAI directory submission-readiness package:
@@ -14,12 +40,11 @@ OpenAI directory submission-readiness package:
 - Extend the existing validation and release CI gates to run the full tests and
   inspect the OpenAI package before distribution sync.
 - Retain fresh single-sample observational behavior evidence: initial 6 PASS /
-  2 FAIL, then 30 source correction commits and 34 preserved failed outputs.
-  The four affected review cases P1/P2/P3/N3 pass semantic and structural
-  checks under final behavior contract `7a13da6`; the combined evidence index
-  is 8 PASS / 0 FAIL with the other four prior observations retained. Full
-  final outputs live under
-  `tests/evidence/skill-craft/1.2.0/`; this is not certification.
+  2 FAIL, followed by 34 preserved failed outputs. The four affected review
+  cases P1/P2/P3/N3 pass semantic and structural checks; the combined evidence
+  index is 8 PASS / 0 FAIL with the other four observations retained. Full
+  outputs live under `tests/evidence/skill-craft/1.2.0/` and are indexed by
+  `tests/skill_craft_submission_evals.json`; this is not certification.
 - No MCP server, scanner, SARIF output, external portal submission, approval,
   or publication is included.
 

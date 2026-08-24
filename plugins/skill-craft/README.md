@@ -1,7 +1,5 @@
 # Skill Craft
 
-[![Skill Craft — review what agents will actually do](assets/skill-craft-cover.png)](https://majarrah-marketplace.hashnode.dev/i-built-skill-craft-because-a-skill-can-look-right-and-still-fail-at-work)
-
 [Read the article: **I Built Skill Craft — Because a Skill Can Look Right and Still Fail at Work**](https://majarrah-marketplace.hashnode.dev/i-built-skill-craft-because-a-skill-can-look-right-and-still-fail-at-work)
 
 [![Latest release](https://img.shields.io/github/v/release/MuhammadBahaa/majarrah-marketplace?display_name=release&label=release&color=brightgreen)](https://github.com/MuhammadBahaa/majarrah-marketplace/releases)
@@ -9,7 +7,7 @@
 [![Stars](https://img.shields.io/github/stars/MuhammadBahaa/majarrah-marketplace?style=flat)](https://github.com/MuhammadBahaa/majarrah-marketplace/stargazers)
 [![skills.sh installs](https://skills.sh/b/MuhammadBahaa/majarrah-marketplace)](https://skills.sh/MuhammadBahaa/majarrah-marketplace)
 
-Skill Craft 1.2.0 is a human-in-the-loop release gate for technical reviews
+Skill Craft 1.2.1 is a human-in-the-loop release gate for technical reviews
 and guided walkthroughs of agent skills, slash commands, and plugins by
 **Majarrah Nexus**. It helps an approver inspect behavior before release;
 custom-agent review and authoring are not included.
@@ -28,8 +26,7 @@ documented in each SKILL.md's Provenance section, per-check tags in
 upstream copy in `skills/skill-craft-review/writing-skills-upstream.md`.
 The two documented trims and complete upstream MIT license are retained in
 [`THIRD_PARTY_NOTICES.md`](skills/skill-craft-review/THIRD_PARTY_NOTICES.md).
-Test evidence:
-`TESTING.md`.
+[Test evidence](https://github.com/MuhammadBahaa/majarrah-marketplace/blob/main/plugins/skill-craft/TESTING.md).
 
 ## Limits
 
