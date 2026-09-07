@@ -1,8 +1,8 @@
 # Publish a GitHub Release for each newly synced plugin version.
 #
-# Generated from MajarrahCore (distribution/majarrah-marketplace/) -- do not
+# Generated from Majarrah Cubiq (distribution/majarrah-marketplace/) -- do not
 # edit here, changes are overwritten on the next release. The release job in
-# MajarrahCore pushes the generated content to main; this workflow turns each
+# Majarrah Cubiq pushes the generated content to main; this workflow turns each
 # new version in marketplace.json into a Release so the repo's Releases
 # sidebar tracks what is actually published.
 name: publish-release

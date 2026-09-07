@@ -11,7 +11,7 @@ Code, and every agent that supports the Agent Skills open standard — including
 Cursor, GitHub Copilot, and Gemini CLI.
 
 <!--
-  Generated from the private MajarrahCore monorepo
+  Generated from the private Majarrah Cubiq monorepo
   (distribution/majarrah-marketplace/README.md). Edits made here are
   overwritten on the next release -- change the source instead.
   This notice is an HTML comment so it does not render on the public page.
@@ -21,12 +21,13 @@ Cursor, GitHub Copilot, and Gemini CLI.
 
 | Plugin | What it does |
 |--------|--------------|
-| [`skill-craft`](plugins/skill-craft) | Technical review and guided walkthroughs for agent skills, slash commands, and plugins. |
+| [`skill-craft`](plugins/skill-craft) | Technical review, guided walkthroughs, and a human-attention approval gate for agent skills, slash commands, and plugins. |
 | [`code-craft`](plugins/code-craft) | Clean Architecture feature implementation in whatever stack a project already uses. |
 
 Every skill also has its own page on skills.sh:
 [`skill-craft-review`](https://skills.sh/muhammadbahaa/majarrah-marketplace/skill-craft-review) ·
 [`skill-walkthrough`](https://skills.sh/muhammadbahaa/majarrah-marketplace/skill-walkthrough) ·
+[`skill-approval-gate`](https://skills.sh/muhammadbahaa/majarrah-marketplace/skill-approval-gate) ·
 [`clean-architecture`](https://skills.sh/muhammadbahaa/majarrah-marketplace/clean-architecture)
 
 ## Install

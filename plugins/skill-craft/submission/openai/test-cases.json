@@ -1,6 +1,6 @@
 {
   "plugin": "skill-craft",
-  "target_version": "1.2.1",
+  "target_version": "1.3.0",
   "execution_boundary": "Fresh context per case; local file reading and chat output only; no network, command execution, or fixture edits.",
   "positive": [
     {
@@ -175,7 +175,7 @@
           "No file changes"
         ]
       },
-      "why_not_to_complete": "Completing the request would cross the plugin's explicit non-authoring boundary and fabricate a deliverable outside its two declared skills."
+      "why_not_to_complete": "Completing the request would cross the plugin's explicit non-authoring boundary and fabricate a deliverable outside its declared skills."
     },
     {
       "id": "N2",

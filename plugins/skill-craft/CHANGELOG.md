@@ -1,5 +1,49 @@
 # Changelog
 
+## 1.3.0 - 2026-09-07
+
+Third layer — the approval gate:
+
+- Add `skill-approval-gate`, the DECIDE layer beside UNDERSTAND
+  (`skill-walkthrough`) and INSPECT (`skill-craft-review`). It consumes the
+  independent review, the behavior evidence, the diff, an optional
+  walkthrough, and the human's prior decisions, then says how much a human
+  must read before approving: `NONE`, `FOCUSED` with exact `file:line`
+  pointers and the decision each needs, or `DEEP` with the sections to read
+  first.
+- Label review provenance: a review from the session that authored or
+  edited the target is `self` and counts as no review; a claim is `missing`.
+  Neither can reach `NONE`.
+- Set attention floors from undecided capability changes: local execution
+  or writes, external reads, and guarded external writes are at least
+  `FOCUSED`; unguarded, destructive, irreversible, or credential-handling
+  capability is `DEEP`. A capability the human already accepted is carried
+  as `established` and sets no floor, so a second round after fixes can
+  close with no reading.
+- Require behavior evidence by change tier (normal, negative trigger,
+  missing information, conflicting instructions, dependency failure,
+  high-impact boundary) rather than blanket ceremony; a missing required
+  case never receives `NONE`.
+- Run a pointer-only capability scan of the target or diff and report any
+  disagreement with the review's Safety scan as a contradiction, never a
+  verdict.
+- Never relax the review's Call: the gate can only add reads or
+  requirements. A closed gate reopens only on a new finding, a changed
+  high-risk section, a behavior mismatch, or a new capability.
+- The gate is read-only like its siblings: file reading and chat, untrusted
+  data fence, root containment, no execution, no endpoint contact.
+- Evidence: fourteen scenarios (eleven pressure scenarios with a retained
+  baseline run without the skill, a cold-trigger test, a missing-evidence
+  regression, and a chat-only self-review claim), each with a retained run
+  with the skill, under `tests/evidence/skill-craft/1.3.0/gate/` and
+  indexed by `tests/skill_approval_gate_evals.json`; five fresh-context
+  reviews with their fixes applied between them. The review and walkthrough skills
+  are byte-identical to 1.2.1, so their retained 1.2.1 evidence carries
+  forward under a recorded-hash guard. This is observational evidence, not
+  certification.
+- No portal upload, submission, approval, publication, push, or tag is
+  included.
+
 ## 1.2.1 - 2026-08-24
 
 Submission-candidate corrections:

@@ -1,7 +1,7 @@
 {
   "name": "skill-craft",
-  "version": "1.2.1",
-  "description": "Technical review and guided walkthroughs for agent skills, slash commands, and plugins — a fixed 10-dimension safety/severity audit plus a clear human approval walkthrough. Custom-agent review and authoring are not included.",
+  "version": "1.3.0",
+  "description": "Technical review, guided walkthroughs, and a human-attention approval gate for agent skills, slash commands, and plugins — a fixed 10-dimension safety/severity audit, a clear five-part walkthrough, and a decision layer that says how much a human must read before approving. Custom-agent review and authoring are not included.",
   "author": {
     "name": "Muhammad Bahaa",
     "email": "muhammadbahaa75@gmail.com"
@@ -19,12 +19,13 @@
   "interface": {
     "displayName": "Skill Craft",
     "shortDescription": "Review skills before release",
-    "longDescription": "Review agent skills as behavior before publishing. Skill Craft audits triggers, workflow safety, context cost, testing evidence, and approval readiness through a fixed ten-dimension report. It also provides a separate five-part walkthrough in the reader's language. Results support a human decision; they are not a security certification.",
+    "longDescription": "Review agent skills as behavior before publishing. Skill Craft audits triggers, workflow safety, context cost, testing evidence, and approval readiness through a fixed ten-dimension report. It also provides a separate five-part walkthrough in the reader's language, and an approval gate that reads the review, tests, and diff and says how much a human must read before approving: none, a few pointed lines, or a deep read. Results support a human decision; they are not a security certification.",
     "developerName": "Muhammad Bahaa",
     "category": "Developer Tools",
     "capabilities": [
       "Review agent skill behavior",
-      "Explain skills in clear language"
+      "Explain skills in clear language",
+      "Decide how much a human must read before approving"
     ],
     "websiteURL": "https://majarrah-marketplace.hashnode.dev/i-built-skill-craft-because-a-skill-can-look-right-and-still-fail-at-work",
     "privacyPolicyURL": "https://github.com/MuhammadBahaa/majarrah-marketplace/blob/main/plugins/skill-craft/PRIVACY.md",

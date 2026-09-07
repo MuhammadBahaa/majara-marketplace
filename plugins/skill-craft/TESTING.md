@@ -1,9 +1,146 @@
 # Test evidence (RED-GREEN-REFACTOR)
 
-The two SkillCraft review skills were developed test-first per the
-superpowers writing-skills methodology: baseline subagent runs without the
-skill, verification runs with it, loophole-closing edits, re-verification.
-Fixture: a realistic migrations skill with 15 planted defects.
+The SkillCraft skills were developed test-first per the superpowers
+writing-skills methodology: baseline subagent runs without the skill,
+verification runs with it, loophole-closing edits, re-verification. The
+original two skills used a realistic migrations skill with 15 planted
+defects as their fixture; the approval gate used the eleven evidence
+bundles described in its section.
+
+## skill-craft — 1.3.0 skill-approval-gate (2026-09-07)
+
+The third skill, `skill-approval-gate`, was developed test-first as the
+DECIDE layer beside the unchanged UNDERSTAND (`skill-walkthrough`) and
+INSPECT (`skill-craft-review`) skills. Design record:
+`docs/superpowers/specs/2026-09-07-skill-craft-approval-gate-design.md`.
+
+RED structural: `tests/test_skill_approval_gate_contract.py` locks the
+frontmatter, the sub-500-word body, the evidence labels, the pointer-only
+capability scan, the never-relax rule, the stop rule, the excuse table, the
+exact report skeleton and its silent preflight, the release metadata, and
+the retained evidence for every scenario. All 38 checks failed before the
+skill and its evidence existed.
+
+RED behavioral: eleven evidence bundles under
+`tests/fixtures/skill-approval-gate/` (a 618-line skill, a two-line
+revision, a hidden force-push the review missed, happy-path-only tests, an
+author's self-review claim, an all-clean skill, one major, an overlapping
+trigger, a BLOCKED review, a second round with an already-accepted write,
+and pressure) were each given to a fresh read-only evaluator without the
+skill. 0 of 11 met the expected behavior; the retained outputs under
+`tests/evidence/skill-craft/1.3.0/gate/baseline/` show the recurring
+rationalizations: "read the SKILL.md yourself" although the independent
+review was clean (S1, S4, S5, S6, S9), re-reviewing the target instead of
+consuming the review (S1, S4, S8), and re-asking the human to decide a
+capability round one had already accepted (S10). The baseline did surface
+the hidden force-push (S3) and hold the major under pressure (S11), so the
+skill adds routing and a contract on top of those instincts rather than
+replacing them.
+
+GREEN results:
+
+- The gate body is 499 words by the repository's whitespace-count contract;
+  both support files open with `## Contents`; the validator reports 0
+  errors.
+- The same eleven bundles, run again by fresh evaluators that loaded the
+  three gate files, all met the expected behavior on the first run: NONE for
+  S1, S2, S6, and S10 (the 618-line skill with two queued minors, the
+  two-line revision, the all-clean skill, and the established write scope);
+  FOCUSED for S4, S5, S7, S8, and S11 (one pointed row for the missing
+  negative-trigger case, two rows for the self-review's two missing cases
+  with the independent review named as the cheaper path, one row for the
+  single major, two rows for the overlapping trigger with the description
+  line first; the pressure run matched S7 row for row); DEEP for S3 and S9 (the force-push line pointed at with the
+  Safety-scan contradiction named, and "do not approve — human first" on
+  the BLOCKED review). No loophole counter was added after the baselines.
+- Cold trigger (S12): from the three descriptions alone, "tell me exactly
+  what I have to read and what I can skip" selected `skill-approval-gate`,
+  "audit whether this skill is ready to ship" selected `skill-craft-review`,
+  and "walk me through what this skill does" selected `skill-walkthrough`.
+- Two regressions were added after the reviews: S13, with nothing attached,
+  returned one concise question and no report; S14, a self-review claim made
+  only in chat, returned FOCUSED with the Where cell `chat claim — no file`
+  and named an independent review as the cheaper path.
+- Outputs are retained verbatim under `tests/evidence/skill-craft/1.3.0/gate/`
+  and indexed by `tests/skill_approval_gate_evals.json`. One repetition per
+  case is observational regression evidence, not variance measurement or
+  certification.
+- `skill-craft-review` and `skill-walkthrough` are byte-identical to 1.2.1,
+  so their eight retained 1.2.1 case outputs carry forward; a recorded-hash
+  test in `tests/test_skill_craft_submission.py` fails the moment either
+  folder changes.
+
+Each evaluator was read-only: no fixture command or script was run, no
+endpoint was contacted, and no file was edited by an evaluator.
+
+The first fresh independent plugin review returned READY-WITH-FIXES 7/10
+with six minors and four polish items and no major
+(`tests/evidence/skill-craft/1.3.0/independent-review-1-ready-with-fixes.md`).
+Nine were applied: the gate now names its target root and reads
+human-named evidence where named (F2), scans for every capability class in
+its rules file rather than a subset (F3), states the stop rule in the Gate
+line's four conditions with assumptions and contradictions counted as new
+findings (F4), and the testing notes, the S12 index entry, the portal kit's
+N1 wording, and the release notes were corrected (F5–F10). F1, a one-way
+sibling boundary in the review skill's description, is deferred to 1.3.1
+because it edits a byte-identical sibling and would require re-running the
+eight portal cases. Three of the review's enhancements were also taken:
+FOCUSED and DEEP always pair with an open gate, bounded is defined without
+a walkthrough, and the walkthrough label is marked as having no
+Evidence-line slot.
+
+The second fresh review, after those fixes, returned READY-WITH-FIXES 7/10
+with four minors and three polish items and no major
+(`independent-review-2-ready-with-fixes.md`). Its F1 (an explicit FOCUSED
+row for a `self` or `missing` review), F2 (a revision with no established
+ledger is scanned whole, as a new skill), F3 (the preflight cites the
+review-Call table instead of restating it), F6, and F7 were applied; its
+F4 and F5 described the evidence index while the re-run outputs and the
+review entries were still being recorded and are closed by the entries now
+present. Because the eleven first-pass runs predate those two rule
+additions, S2, S3, S5, and S10 were re-run after the first review and S1,
+S3, and S6 after the second, all on the wording that ships; every earlier
+output is kept as a `1.3.0-rc1` or `1.3.0-rc2` run.
+
+The third fresh review returned READY-WITH-FIXES 7/10 with four minors and
+two polish items and no major (`independent-review-3-ready-with-fixes.md`).
+Its F1 (a `self` or `missing` review has no stricter Recommended value than
+"changes required — obtain an independent skill-craft-review"), F2 (a claim
+that exists only in chat takes the Where cell `chat claim — no file`), F5
+(the README now points at the upstream provenance header for the two
+trims), and F6 (TERMS.md names the gate's results as advisory) are applied,
+not independently re-reviewed; its F3 described the index before the final
+S1, S3, and S6 entries landed and its F4 is this paragraph. The gate's own
+report on this release, produced by a fresh evaluator from the third review
+and the scenario evidence, is `gate/self-gate-report.md` and is indexed
+under `self_gate` in `tests/skill_approval_gate_evals.json`: FOCUSED, with
+the post-review edits and the portal-kit wording as the human's decisions
+and everything else marked no read; S14 was run afterwards to cover its
+third row.
+
+A fourth fresh review, skill-level this time and requested after the pull
+request opened, returned READY-WITH-FIXES 7/10 with three minors and one
+polish item and no major (`independent-review-4-skill-level.md`). All four
+were applied: a capability-scan hit now has a named output slot (an
+undecided hit at FOCUSED or above is a Read row; none-floor and
+established hits are named only in the closing "Everything else" line),
+step 4 says when the whole target is scanned rather than the diff, the
+Recommended vocabulary gains `approve after the reads above — queue
+<F-refs>` so a READY-WITH-FIXES review's queued minors have a slot at
+FOCUSED, and the stop rule no longer restates the Gate line. S1, S3, S8,
+and S14 were re-run on that wording, all passing.
+
+A fifth fresh skill-level review, after those fixes, returned
+READY-WITH-FIXES 7/10 with three minors and two polish items and no major,
+with safety and testing evidence clean
+(`independent-review-5-skill-level.md`). All five were applied: step 4 now
+names the exact whole-target predicate the rules file uses, a failed
+required case has its own Read row and FOCUSED entry, the Safety-scan
+contradiction example excludes lines a required human confirmation
+guards, none-floor hits at NONE are mentioned only on the Evidence line,
+and the Where cell is written in its clickable form. These five are
+wording clarifications applied without a further re-review or re-run; the
+evidence index labels every run with the wording stage it loaded.
 
 ## skill-craft — 1.2.1 submission corrections (2026-08-24)
 
@@ -171,7 +308,7 @@ was run once by a fresh read-only subagent.
   a broken local link, body size, and stale release metadata.
 - GREEN target: all nine checks pass while the required Safety scan, Token
   cost, dimension coverage, severity verdicts, and Decision remain present.
-- The test is `tests/test_skill_craft_review_contract.py` in MajarrahCore.
+- The test is `tests/test_skill_craft_review_contract.py` in Majarrah Cubiq.
 - Independent post-fix agent review remains required; structural GREEN is
   verification, not self-approval.
 

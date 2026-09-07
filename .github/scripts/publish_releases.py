@@ -3,7 +3,7 @@
 
 Runs inside the generated distribution repo, where .claude-plugin/marketplace.json
 is the list of published plugins and their versions. For each entry it creates
-the tag <plugin>/v<version> -- matching the MajarrahCore release-tag convention --
+the tag <plugin>/v<version> -- matching the Majarrah Cubiq release-tag convention --
 with the matching CHANGELOG section as the release notes. Existing releases are
 left untouched, so re-running is safe and a plugin-less release is a no-op.
 """

@@ -7,24 +7,43 @@
 [![Stars](https://img.shields.io/github/stars/MuhammadBahaa/majarrah-marketplace?style=flat)](https://github.com/MuhammadBahaa/majarrah-marketplace/stargazers)
 [![skills.sh installs](https://skills.sh/b/MuhammadBahaa/majarrah-marketplace)](https://skills.sh/MuhammadBahaa/majarrah-marketplace)
 
-Skill Craft 1.2.1 is a human-in-the-loop release gate for technical reviews
-and guided walkthroughs of agent skills, slash commands, and plugins by
-**Majarrah Nexus**. It helps an approver inspect behavior before release;
+Skill Craft 1.3.0 is a human-in-the-loop release gate for agent skills,
+slash commands, and plugins by **Majarrah Nexus**: a technical review, a
+guided walkthrough, and an approval gate that says how much a human must
+read before approving. It helps an approver inspect behavior before release;
 custom-agent review and authoring are not included.
 
 | Skill | What it does |
 |---|---|
 | `skill-craft-review` | Technical review of a skill/plugin: 10-dimension walk, safety scan, severity-mapped verdict, reviewer-stance rules, Decision close for the approver |
 | `skill-walkthrough` | Guided, organized read of a skill: five-part plain-language walkthrough in clear ordered parts, your language; hands the approve call to skill-craft-review |
+| `skill-approval-gate` | Decides how much human attention a reviewed skill needs before approval: NONE, FOCUSED (the exact lines to read and the decision each needs), or DEEP; consumes the review, tests, walkthrough, and diff, and never relaxes the review's call |
 
-Both skills are built on the superpowers `writing-skills` skill v6.0.3
-(MIT, (c) 2025 Jesse Vincent; vendored copy verified against upstream
-through v6.1.1 — near-verbatim, two documented trims). Inherited versus
+The three skills are three layers, and the approver reads only where
+human judgment materially improves confidence:
+
+| Layer | Skill | Question it answers |
+|---|---|---|
+| UNDERSTAND | `skill-walkthrough` | What does this skill do, and what can it touch? |
+| INSPECT | `skill-craft-review` | What is wrong, how bad is it, and is it safe? |
+| DECIDE | `skill-approval-gate` | How much do I personally have to read before I approve, and exactly what? |
+
+`NONE` is a legitimate answer: when the independent review is clean, the
+required behavior cases pass, no new capability is undecided, and no
+human-only question remains, the approver decides from the gate report
+without opening the skill. A new external write, a destructive action, an
+unresolved major, or a missing required test can never receive `NONE`.
+The review and walkthrough skills are built on the superpowers
+`writing-skills` skill v6.0.3 (MIT, (c) 2025 Jesse Vincent; vendored copy
+verified against upstream through v6.1.1 — near-verbatim, two documented
+trims); the approval gate is SkillCraft-original. Inherited versus
 customized parts are
 documented in each SKILL.md's Provenance section, per-check tags in
 `skills/skill-craft-review/review-checklist.md`, and the near-verbatim
 upstream copy in `skills/skill-craft-review/writing-skills-upstream.md`.
-The two documented trims and complete upstream MIT license are retained in
+The two documented trims are described in the provenance header of
+`skills/skill-craft-review/writing-skills-upstream.md`; the complete
+upstream MIT license is retained in
 [`THIRD_PARTY_NOTICES.md`](skills/skill-craft-review/THIRD_PARTY_NOTICES.md).
 [Test evidence](https://github.com/MuhammadBahaa/majarrah-marketplace/blob/main/plugins/skill-craft/TESTING.md).
 
@@ -42,7 +61,7 @@ authoring, an MCP server, network access, authentication, or storage. See the
 
 ## Install
 
-Every route installs the same two skills. Pick the one that matches your agent.
+Every route installs the same three skills. Pick the one that matches your agent.
 
 ### Codex
 
@@ -54,8 +73,8 @@ codex plugin add skill-craft@majarrah-marketplace
 ```
 
 `codex plugin list` should now show `skill-craft@majarrah-marketplace` as
-`installed, enabled`. Start a new Codex task to load `skill-craft-review`
-and `skill-walkthrough`.
+`installed, enabled`. Start a new Codex task to load `skill-craft-review`,
+`skill-walkthrough`, and `skill-approval-gate`.
 
 ### Claude Code
 
@@ -66,7 +85,7 @@ claude plugin marketplace add MuhammadBahaa/majarrah-marketplace
 ```
 
 `/plugin` lists what is installed — `skill-craft` should be enabled. Start a
-new session to load both skills.
+new session to load all three skills.
 
 ### Cursor, GitHub Copilot, Gemini CLI, and others
 

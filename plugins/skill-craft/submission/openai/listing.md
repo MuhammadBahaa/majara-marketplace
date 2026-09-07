@@ -1,6 +1,6 @@
 # OpenAI portal listing
 
-Portal-only copy for the Skill Craft 1.2.1 submission candidate. The native
+Portal-only copy for the Skill Craft 1.3.0 submission candidate. The native
 manifest remains the source for fields accepted by the ingestion schema;
 Support is retained here because `interface.supportURL` is not accepted.
 
@@ -12,9 +12,9 @@ Support is retained here because `interface.supportURL` is not accepted.
 
 ## Descriptions
 
-- Plugin description: Technical review and guided walkthroughs for agent skills, slash commands, and plugins — a fixed 10-dimension safety/severity audit plus a clear human approval walkthrough. Custom-agent review and authoring are not included.
+- Plugin description: Technical review, guided walkthroughs, and a human-attention approval gate for agent skills, slash commands, and plugins — a fixed 10-dimension safety/severity audit, a clear five-part walkthrough, and a decision layer that says how much a human must read before approving. Custom-agent review and authoring are not included.
 - Short description: Review skills before release
-- Long description: Review agent skills as behavior before publishing. Skill Craft audits triggers, workflow safety, context cost, testing evidence, and approval readiness through a fixed ten-dimension report. It also provides a separate five-part walkthrough in the reader's language. Results support a human decision; they are not a security certification.
+- Long description: Review agent skills as behavior before publishing. Skill Craft audits triggers, workflow safety, context cost, testing evidence, and approval readiness through a fixed ten-dimension report. It also provides a separate five-part walkthrough in the reader's language, and an approval gate that reads the review, tests, and diff and says how much a human must read before approving: none, a few pointed lines, or a deep read. Results support a human decision; they are not a security certification.
 
 ## URLs
 
@@ -33,10 +33,11 @@ Support is retained here because `interface.supportURL` is not accepted.
 
 ## Limitations and release boundaries
 
-- The target version is 1.2.1.
-- MajarrahCore is the authoritative source; generated majarrah-marketplace output is not edited directly.
+- The target version is 1.3.0.
+- Majarrah Cubiq is the authoritative source; generated majarrah-marketplace output is not edited directly.
 - Preserve `.claude-plugin/plugin.json`; add `.codex-plugin/plugin.json` and keep identity fields synchronized.
 - The plugin is skills-only. It has no MCP, tools, authentication, UI, telemetry, remote service, or data storage.
+- The portal matrix in test-cases.json exercises the review and walkthrough skills; the approval gate's pressure scenarios are indexed in `tests/skill_approval_gate_evals.json` of the source repository.
 - It does not claim security certification, full determinism, uniqueness, submission, approval, or publication.
 - Verdict-to-score mapping is deterministic only after model-assigned findings and severities exist.
 - The runtime ZIP excludes submission notes, tests, fixtures, the legacy manifest, repository internals, and the article cover.
